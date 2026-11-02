@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css " />
+    <link rel="stylesheet" href="style.css">
+    <title>Amarena</title>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="encabezado">
+
+            <a href="index.html">
+                <img src="web/LANDING PAGE-LOGO.png" alt="Logo">
+            </a>
+
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
+
+            <nav class="botones" id="menu">
+                <div class="botone"><a href="menu.html">Menu</a></div>
+                <div class="botone"><a href="sobre-nosotros.html">Sobre nosotros</a></div>
+                <div class="botone"><a href="contactanos.html">Contactanos</a></div>
+                <div class="botone"><a href="recervas.html">Reservas</a></div>
+                <a href="login.html"><i class="fa fa-cog" aria-hidden="true"></i></a>
+            </nav>
+        </div>
+    </header>
+
+   <div class="menu">
+        <h1>Reservar una mesa</h1>
+        <div class="linea"></div>
+        <p>Seleccione a continuacion...</p>
+   </div>
+        
+   <div class="reservaxx">
+
+        <label>Fecha:</label>
+        <input type="date" id="fechaAdmin">
+
+        <label>Hora:</label>
+        <select id="horaAdmin"></select>
+
+        <button onclick="mostrarMesasAdmin()" class="boton">Ver mesas</button>
+        <div id="mesasAdmin"></div>
+
+        <button onclick="cerrarSesion()" class="boton">Cerrar sesión</button>
+
+   </div>
+       
+
+
+
+        <script>
+            const horas = ["12:00", "13:00", "14:00","15:00","16:00","17:00","18:00","19:00", "20:00", "21:00", "22:00",];
+            const mesas = [1, 2, 3, 4, 5, 6,7,8,9,10];
+            const selectHora = document.getElementById("horaAdmin");
+            horas.forEach(h => {
+                let op = document.createElement("option");
+                op.value = h;
+                op.textContent = h;
+                selectHora.appendChild(op);
+            });
+
+            function mostrarMesasAdmin() {
+                const fecha = document.getElementById("fechaAdmin").value;
+                const hora = document.getElementById("horaAdmin").value;
+                if (!fecha || !hora)  {
+        Swal.fire({
+            icon: "warning",
+            text: "Selecciona fecha y hora antes de continuar",
+            confirmButtonText: "OK"
+        });
+        return;
+    }
+
+                const reservas = JSON.parse(localStorage.getItem("reservasMesas")) || [];
+                const cont = document.getElementById("mesasAdmin");
+                cont.innerHTML = "";
+
+                mesas.forEach(m => {
+                    const ocupado = reservas.some(r => r.fecha === fecha && r.hora === hora && r.mesa === m);
+                    let btn = document.createElement("button");
+                    btn.textContent = `Mesa ${m} - ${ocupado ? "Ocupada" : "Libre"}`;
+                    btn.style.background = ocupado ? "#696256" : "#b6264c";
+
+                    btn.onclick = () => {
+                        if (ocupado) {
+                            // liberar
+                            const nuevo = reservas.filter(r => !(r.fecha === fecha && r.hora === hora && r.mesa === m));
+                            localStorage.setItem("reservasMesas", JSON.stringify(nuevo));
+                        } else {
+                            reservas.push({ fecha, hora, mesa: m });
+                            localStorage.setItem("reservasMesas", JSON.stringify(reservas));
+                        }
+                        mostrarMesasAdmin();
+                    };
+                    cont.appendChild(btn);
+                });
+            }
+
+            function cerrarSesion() {
+                localStorage.removeItem("logueadoResto");
+                window.location.href = "login.html";
+            }
+        </script>
+         <script>
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            document.getElementById("menu").classList.toggle("active");
+        });
+    </script>
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
+
+    </html>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/7606dc2571.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   <title>Login Hospital</title>
+</head>
+<body>
+ <header>
+        <div class="encabezado">
+
+            <a href="index.html">
+                <img src="web/LANDING PAGE-LOGO.png" alt="Logo">
+            </a>
+
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
+
+            <nav class="botones" id="menu">
+                <div class="botone"><a href="menu.html">Menu</a></div>
+                <div class="botone"><a href="sobre-nosotros.html">Sobre nosotros</a></div>
+                <div class="botone"><a href="contactanos.html">Contactanos</a></div>
+                <div class="botone"><a href="recervas.html">Reservas</a></div>
+                <a href="login.html"><i class="fa fa-cog" aria-hidden="true"></i></a>
+            </nav>
+        </div>
+    </header>
+
+   <div class="log">
+    
+
+    <div class="contacto-titulo" style="align-items: center;">
+        <h1>Ingreso al Restaurante</h1>
+        <div class="linea"></div>
+    </div>
+
+    <input type="text" id="usuario" placeholder="Usuario">
+    <input type="password" id="clave" placeholder="Contraseña">
+    <button onclick="login()" class="boton">Ingresar</button>
+    <p id="error"></p>
+
+   </div>         
+
+  <script>
+
+    //------------ inicio de secion ----------> -- USUARIO --> "resto" -- CONTRASEÑA --> "1234"
+
+    function login() {
+      const u = document.getElementById("usuario").value;
+      const c = document.getElementById("clave").value;
+      if(u === "resto" && c === "1234"){ //aqui el usuario y la contraseña :)
+        localStorage.setItem("logueadoResto","true");
+        window.location.href = "admin.html";
+      } else {
+        document.getElementById("error").innerText = "Datos incorrectos";
+      }
+    }
+  </script>
+  <script>
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            document.getElementById("menu").classList.toggle("active");
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href = " https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css " />
+    <link rel="stylesheet" href="style.css">
+    <title>Amarena</title>
+</head>
+<body>
+    
+   
+  <header>
+  <div class="encabezado">
+    
+    <a href="index.html">
+      <img src="web/LANDING PAGE-LOGO.png" alt="Logo">
+    </a>
+
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+
+    <nav class="botones" id="menu">
+      <div class="botone"><a href="menu.html">Menu</a></div>
+      <div class="botone"><a href="sobre-nosotros.html">Sobre nosotros</a></div>
+      <div class="botone"><a href="contactanos.html">Contactanos</a></div>
+      <div class="botone"><a href="recervas.html">Reservas</a></div>
+      <a href="login.html"><i class="fa fa-cog" aria-hidden="true"></i></a>
+    </nav>
+
+  </div>
+</header>
+
+    <div class="contacto-titulo">
+        <h1>Contactanos</h1>
+        <div class="linea"></div>
+    </div>
+
+     <div class="container">
+        
+        <form action="https://formsubmit.co/ma.inesdallia@gmail.com" method="POST">
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" name="name" class="form-control" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="col">
+                        <input type="email" name="email" class="form-control" placeholder="Email..." required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Escribe tu mensaje..." class="form-control" name="message" rows="10" required></textarea>
+            </div>
+            <button type="submit" class=" btn">Enviar</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="pp"></div>
+        <div class="pie">
+            <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+            <p>151 E 82nd st. New York NY 10028</p>
+        </div>
+    </footer>
+
+    
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+        document.getElementById("menu").classList.toggle("active");
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+</html>

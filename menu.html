@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href = " https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css " />
+    <link rel="stylesheet" href="style.css">
+    <title>Menu</title>
+</head>
+<body>
+    
+  <header>
+  <div class="encabezado">
+    
+    <a href="index.html">
+      <img src="web/LANDING PAGE-LOGO.png" alt="Logo">
+    </a>
+
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+
+    <nav class="botones" id="menu">
+      <div class="botone"><a href="menu.html">Menu</a></div>
+      <div class="botone"><a href="sobre-nosotros.html">Sobre nosotros</a></div>
+      <div class="botone"><a href="contactanos.html">Contactanos</a></div>
+      <div class="botone"><a href="recervas.html">Reservas</a></div>
+    </nav>
+  </div>
+</header>
+
+   <div class="menu">
+        <h1>Ristorante Amarena - NYC</h1>
+        <div class="linea"></div>
+        <p>Menú Degustación</p>
+   </div>
+   <div class="comidas">
+        <div class="comida">
+            <h3>Entradas</h3>
+            <div class="cherrys">
+                    <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p> <strong>Bruschetta al Pomodoro</strong> – Pan artesanal con tomates cherry, albahaca fresca y aceite de oliva extra virgen.</p>
+                    </div>
+                    <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p><strong>Carpaccio di Manzo</strong> – Fino corte de res con rúcula, lascas de parmesano y aderezo de limón.</p>
+                    </div>
+                    <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p><strong>Burrata con Prosciutto </strong>– Burrata cremosa acompañada de prosciutto di Parma y rúcula fresca.</p>
+                    </div>
+                </div>
+        </div>
+        <div class="comida">
+            <h3>Platos Principales</h3>
+            <div class="cherrys">
+                    <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p> <strong>Risotto ai Funghi Porcini</strong> – Cremoso risotto con hongos porcini y un toque de trufa blanca.</p>
+                    </div>
+                    <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p><strong>Tagliatelle al Tartufo</strong> – Pasta fresca con salsa de crema ligera y trufa negra rallada.</p>
+                    </div>
+                    <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p><strong>Branzino al Forno </strong>–Lubina al horno con hierbas mediterráneas y limón siciliano.</p>
+                    </div>
+                     <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p><strong>Filetto di Manzo alla Griglia</strong>– Filete de res a la parrilla con reducción de vino Barolo.</p>
+                    </div>
+                </div>
+        </div>
+        <div class="comida">
+            <h3>Postres</h3>
+            <div class="cherrys">
+                    <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p> <strong>Tiramisù Classico</strong> – Receta tradicional con mascarpone, café espresso y cacao.</p>
+                    </div>
+                    <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p><strong>Panna Cotta alla Vaniglia </strong> – Cremoso postre de vainilla con coulis de frutos rojos.</p>
+                    </div>
+                    <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p><strong>Cannoli Siciliani </strong>– Rellenos de ricotta dulce, naranja confitada y chocolate.</p>
+                    </div>
+                </div>
+        </div>
+        <div class="comida">
+            <h3>Bebidas</h3>
+            <div class="cherrys">
+                    <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p> <strong>Selección de Vinos Italianos</strong> – Chianti, Barolo, Prosecco.</p>
+                    </div>
+                    <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p><strong>Cocktail Negroni </strong> – Clásico italiano con gin, vermut rosso y Campari.</p>
+                    </div>
+                    <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p><strong>Café Espresso Italiano</strong>– Auténtico y aromático.</p>
+                    </div>
+                     <div class="cherry">
+                        <img src="web/cherry.png" alt="">
+                        <p><strong>Limoncello Casero</strong>– Digestivo fresco del sur de Italia.</p>
+                    </div>
+                </div>
+        </div>
+   </div>
+    
+
+    <footer>
+        <div class="pp"></div>
+        <div class="pie">
+            <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+            <p>151 E 82nd st. New York NY 10028</p>
+        </div>
+    </footer>
+
+    
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+        document.getElementById("menu").classList.toggle("active");
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+</html>
